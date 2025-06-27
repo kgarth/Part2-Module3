@@ -30,7 +30,7 @@ def main():
         
         
 
-    print('The alarm will go off at {}.'.format(alarm))
+    print('The alarm will go off at {} hundred hours.'.format(alarm))
 
 
 
