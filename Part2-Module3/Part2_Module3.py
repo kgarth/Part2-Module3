@@ -20,12 +20,14 @@ def main():
                     break
                 except ValueError:
                     print('Hours entered must be positive whole number.')
+            
+            alarm = (time + passage_of_time) % clock
+            break
 
         except ValueError:
             print('Time entry must be a positive whole number between 0-23.')
             
-        alarm = (time + passage_of_time) % clock
-        break
+        
         
 
     print('The alarm will go off at {}.'.format(alarm))
