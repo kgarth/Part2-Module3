@@ -7,18 +7,25 @@ def main():
     while True:
         try:
             time = int(input('What time is it (24-clock): '))
-            passage_of_time = int(input('How long until alarm goes off: '))
             
             if time < 0 or time > 23:
-                raise ValueError('Entry must be between 0-23')
+                raise ValueError()
 
-            if passage_of_time < 0:
-                raise ValueError('Entry must be 0 or greater.')
-
-            alarm = (time + passage_of_time) % clock
-            break
         except ValueError:
-            print('All entries must be whole numbers.')
+            print('Time entry must be a positive whole number between 0-23.')
+            
+        try:    
+            passage_of_time = int(input('How long until alarm goes off: '))
+            
+            if passage_of_time < 0:
+                raise ValueError()
+
+        except ValueError:
+            print('Hours entered must be positive whole number.')
+
+        alarm = (time + passage_of_time) % clock
+        break
+        
 
     print('The alarm will go off at {}.'.format(alarm))
 
