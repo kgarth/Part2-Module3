@@ -18,6 +18,7 @@ def main():
                     if passage_of_time < 0:
                         raise ValueError()
                     break
+
                 except ValueError:
                     print('Hours entered must be positive whole number.')
             
